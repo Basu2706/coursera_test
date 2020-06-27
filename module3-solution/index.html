@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="NarrowItDownApp">
   <head>
     <title>Narrow Down Your Menu Choice</title>
     <meta charset="utf-8">
@@ -9,8 +9,8 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
   </head>
-<body ng-app="NarrowItDownApp">
-   <div class="container" ng-controller="NarrowItDownController as list">
+<body  ng-controller="NarrowItDownController as list">
+   <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -18,13 +18,14 @@
     </div>
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="list.findItems(list.searchItem);">Narrow It Down For Me!</button>
-      <!-- found-items should be implemented as a component -->
-      <found-items
-        items="list.found"
-        on-remove="list.removeItem(index)">
-      </found-items>
   </div>
   </div>
-
+  <!-- found-items should be implemented as a component -->
+  <div class="container">
+    <found-items
+      items="list.found"
+      on-remove="list.removeItem(index)">
+    </found-items>
+  </div>
 </body>
 </html>
